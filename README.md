@@ -1,73 +1,84 @@
-# Welcome to your Lovable project
 
-## Project info
+# Product Autocomplete Component
 
-**URL**: https://lovable.dev/projects/f27206d4-79a7-4c42-9bdf-c85343b06cd0
+A React TypeScript application that implements a product search autocomplete component, using the DummyJSON API.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- 🔍 Real-time product search with DummyJSON API
+- ⏱️ Debounced API requests for performance optimization
+- 🧩 Pagination support for browsing through search results
+- 📱 Responsive design that works on all device sizes
+- 🎨 Clean UI with visual feedback and smooth transitions
+- 🛡️ Error handling with user-friendly messages
+- ⌨️ Keyboard navigation support (arrow keys, enter, escape)
 
-**Use Lovable**
+## Setup Instructions
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f27206d4-79a7-4c42-9bdf-c85343b06cd0) and start prompting.
+1. Clone the repository
+   ```
+   git clone https://github.com/yourusername/product-autocomplete.git
+   cd product-autocomplete
+   ```
 
-Changes made via Lovable will be committed automatically to this repo.
+2. Install dependencies
+   ```
+   npm install
+   ```
 
-**Use your preferred IDE**
+3. Start the development server
+   ```
+   npm run dev
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+4. Open [http://localhost:8080](http://localhost:8080) in your browser
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Implementation Approach
 
-Follow these steps:
+### Component Structure
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+The application is organized into the following components:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- `Autocomplete`: Main component managing the search state and logic
+- `ProductItem`: Individual product display component
+- `ProductItemSkeleton`: Loading placeholder for products
+- `Pagination`: Navigation control for paging through results
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Technical Decisions
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+- **Debouncing**: Implemented via a custom hook to prevent excessive API calls as the user types
+- **Pagination**: Uses skip/limit parameters to fetch paginated results from the API
+- **Keyboard Navigation**: Full keyboard support for accessibility
+- **Loading States**: Visual feedback during data fetching operations
+- **Error Handling**: Graceful error handling with user feedback via toast notifications
 
-**Edit a file directly in GitHub**
+### UI/UX Considerations
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Clean, minimal design with sufficient visual hierarchy
+- Responsive layout that works well on mobile and desktop
+- Loading indicators for feedback during API requests
+- Empty states and error messages for better user guidance
+- Subtle animations to enhance the interaction experience
 
-**Use GitHub Codespaces**
+## Technologies Used
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
+- React 18
 - TypeScript
-- React
-- shadcn-ui
 - Tailwind CSS
+- Shadcn UI Components
+- Lucide React Icons
+- React Query for data fetching
 
-## How can I deploy this project?
+## Future Improvements
 
-Simply open [Lovable](https://lovable.dev/projects/f27206d4-79a7-4c42-9bdf-c85343b06cd0) and click on Share -> Publish.
+Given more time, these enhancements could be added:
 
-## Can I connect a custom domain to my Lovable project?
+- Implement caching for previous search results
+- Add filters for product categories, price ranges
+- Improve accessibility with ARIA attributes and screen reader support
+- Add unit and integration tests
+- Implement selection history/recent searches
 
-Yes, you can!
+## License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+MIT
